@@ -4,14 +4,17 @@ import "./styles.css";
 
 
 function App() {
+
+  const [selectedImg, setSelectedImg] = useState(Images[0]);
   return (
     <div className="App">
       <div className="container">
-        <img src="" alt="selected" className="selected" />
+        <img src={selectedImg} alt="selected" className="selected" />
       </div>
       <div className="imgContainer">
         {Images.map((img, index)=>(
-          <img key={index} src={img} alt="vista" />
+          <img key={index} src={img} alt="vista" 
+          onClick={()=>setSelectedImg(img)}/>
         )
         )}
       </div>
